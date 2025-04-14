@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int ganhador;
+    float premio_total = 100000.0;
+    float premio;
+
+    printf("Digite o número do ganhador (1, 2 ou 3): ");
+    scanf("%d", &ganhador);
+
+    switch (ganhador) {
+        case 1:
+            premio = premio_total * 0.46;
+            printf("O primeiro ganhador recebe: R$ %.2f\n", premio);
+            break;
+        case 2:
+            premio = premio_total * 0.32;
+            printf("O segundo ganhador recebe: R$ %.2f\n", premio);
+            break;
+        case 3:
+            premio = premio_total * (1.0 - 0.46 - 0.32); // 22%
+            printf("O terceiro ganhador recebe: R$ %.2f\n", premio);
+            break;
+        default:
+            printf("Erro! Opção inválida. Digite apenas 1, 2 ou 3.\n");
+            return 1;
+    }
